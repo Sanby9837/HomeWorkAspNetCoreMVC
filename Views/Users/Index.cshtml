@@ -1,0 +1,25 @@
+﻿@model List<HomeWorkAspNetCoreMVC.Models.Entity.Users>
+
+<h1> User List</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>CreatDateTime</th>
+            <th>UpdateTime</th>
+        </tr>
+    </thead>
+    <tbode>
+        @foreach (var users in Model)
+        {
+            <tr>
+                <td> @users.Id</td>
+                <td> @users.Name</td>
+                <td> @users.CreatDateTime</td>
+                <td> @users.UpdateTime</td>
+            </tr>
+        }
+    </tbode>
+</table>
