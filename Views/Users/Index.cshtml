@@ -1,7 +1,24 @@
 ﻿@model List<HomeWorkAspNetCoreMVC.Models.Entity.Users>
 
-<h1> User List</h1>
+<style>
+    hr{
+        background-color: black;
+    }
 
+    /* 表格樣式 */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+</style>
+
+<form asp-controller="Users" asp-action="Create" method="get">
+    <button type="submit">新增</button>
+</form>
+
+<h1> User List</h1>
+<a href="@Url.Action("Create", "Users")">去新增</a>
+<hr />
 <table>
     <thead>
         <tr>
@@ -11,7 +28,7 @@
             <th>UpdateTime</th>
         </tr>
     </thead>
-    <tbode>
+    <tbody>
         @foreach (var users in Model)
         {
             <tr>
@@ -21,5 +38,5 @@
                 <td> @users.UpdateTime</td>
             </tr>
         }
-    </tbode>
+    </tbody>
 </table>
